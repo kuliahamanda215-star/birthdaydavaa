@@ -103,7 +103,7 @@ closePopup.addEventListener("click",()=>{
 // COUNTDOWN
 // ======================
 
-const targetDate = new Date("2026-07-03T00:00:00").getTime();
+const targetDate = new Date("2026-07-03T05:00:00").getTime();
 
 function updateCountdown(){
 
@@ -167,7 +167,13 @@ letterBtn.addEventListener("click",()=>{
 
     }
 
-    music.play().catch(()=>{});
+    music.play()
+.then(() => {
+    console.log("Musik berhasil diputar");
+})
+.catch((err) => {
+    console.error("Gagal memutar musik:", err);
+});
 
     showPage("letterPage");
 
